@@ -39,7 +39,7 @@ const app = new Vue({
     // MILESTONE 1
     // Stampare all’interno di una lista, un item per ogni todo.
     // Se la proprietà done è uguale a true, visualizzare il testo del todo sbarrato.
-    
+
     methods: {
 
         addItem(){
@@ -50,12 +50,25 @@ const app = new Vue({
             }
         },
 
+        taskDone(index) {
+            if (this.todos[index].done === true) {
+                return 'task-done';
+            }
+        },
+
+        taskToggle(item) {
+            if (item.done === true) {
+                item.done = false;
+            } else {
+                item.done = true;
+            }
+        },
 
         // MILESTONE 2
         // Visualizzare a fianco ad ogni item ha una “x”: cliccando su di essa, il todo viene rimosso dalla lista.
 
         deleteItem(index){
-            this.todos.splice(index,1);
+            this.todos.splice(index, 1);
         }
     }
 });

@@ -20,10 +20,10 @@
             <button>Aggiungi</button>
 
             <ul v-if="todos.length > 0">
-                <li v-for="(item, i) in todos" :key="i">
+                <li v-for="(item, i) in todos" class="todo" :key="i"  :class="taskDone(i)">
                     <div class="todo-item">
-                        <span>{{item.text}}</span>
-                        <i class="fas fa-times" @click="deleteItem(index)"></i> 
+                        <span @click="taskToggle(item)">{{item.text}}</span>
+                        <i class="fas fa-times" @click="deleteItem(i)"></i> 
                     </div>
                 </li>
             </ul>
