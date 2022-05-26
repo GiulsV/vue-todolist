@@ -38,12 +38,17 @@ const myTodoList = new Vue({
 
         // MILESTONE 3
         // Predisporre un campo di input testuale e un pulsante “aggiungi”: cliccando sul pulsante, il testo digitato viene letto e utilizzato per creare un nuovo todo, che quindi viene aggiunto alla lista dei todo esistenti.
+        
         addItem(){
+            const newTask = {
+                text: this.newToDo.text,
+                done: false
+            }
 
             if(this.newToDo !== ""){
 
-                this.todos.push(this.newToDo);
-                this.newToDo = "";
+                this.todos.push(newTask);
+                this.newTask = "";
 
             }
         },
