@@ -4,6 +4,65 @@
     box-sizing: border-box;
 }
 
+/* Visualizza testo sbarrato */
 .task-done{
     text-decoration: line-through;
+}
+
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+.to-do-container li{
+    list-style-type: none;
+    cursor: pointer;
+    padding: 2%;
+}
+  
+.new-todo,
+h1{
+    margin-bottom: 3%;
+}
+
+/* Main */
+main{
+    background-color: #8cc6fc;
+    height:100vh;
+    padding-top: 50px;
+    padding-bottom: 12px;
+ }
+
+/* div contenitore */
+.to-do-container{
+    background-color: #ddf7ff;
+    height:auto;
+    margin: 10% 30%;
+    padding-top: 5px;
+    padding-bottom: 8px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* input e pulsanti */
+button{
+    background-color: rgb(36, 160, 237);
+    font-weight: bold;
+    border: none;
+    border-radius: 7px;
+    color: white;
+    padding: 8px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px; 
+    cursor: pointer; 
+}
+input{
+    border-radius: 7px;
+    border: 1px black solid;
+    padding: 8px 20px;
+    font-size: 12px;
+    margin: 4px 2px; 
 }
