@@ -87,9 +87,5 @@ const myTodoList = new Vue({
         deleteItem(index){
             this.todos.splice(index, 1);
         },
-        
-        
-        
-
     }
 });
