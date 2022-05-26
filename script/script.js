@@ -23,27 +23,25 @@ const todos = [
     }
 ]
 
-const app = new Vue({
+const myTodoList = new Vue({
 
-    el: '#todo',
+    el: '#app',
     data: {
         todos,
-        doneToDos: [],
         newToDo: {
             text: '',
             done: false
         }
     },
-
-
-    // MILESTONE 1
-    // Stampare all’interno di una lista, un item per ogni todo.
-    // Se la proprietà done è uguale a true, visualizzare il testo del todo sbarrato.
-
+    
     methods: {
 
+        // MILESTONE 3
+        // Predisporre un campo di input testuale e un pulsante “aggiungi”: cliccando sul pulsante, il testo digitato viene letto e utilizzato per creare un nuovo todo, che quindi viene aggiunto alla lista dei todo esistenti.
         addItem(){
+
             if(this.newToDo !== ""){
+
                 this.todos.push(this.newToDo);
                 this.newToDo = "";
 
@@ -56,6 +54,9 @@ const app = new Vue({
             }
         },
 
+        // MILESTONE 1
+        // Stampare all’interno di una lista, un item per ogni todo.
+        // Se la proprietà done è uguale a true, visualizzare il testo del todo sbarrato.
         taskToggle(item) {
             if (item.done === true) {
                 item.done = false;
@@ -69,14 +70,17 @@ const app = new Vue({
 
         deleteItem(index){
             this.todos.splice(index, 1);
-        }
+        },
+        
+        
+        
+
     }
 });
     
 
 
-// MILESTONE 3
-// Predisporre un campo di input testuale e un pulsante “aggiungi”: cliccando sul pulsante, il testo digitato viene letto e utilizzato per creare un nuovo todo, che quindi viene aggiunto alla lista dei todo esistenti.
+
 
 // Bonus:
 // 1- oltre al click sul pulsante, intercettare anche il tasto ENTER per aggiungere il todo alla lista

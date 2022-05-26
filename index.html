@@ -12,12 +12,14 @@
 </head>
 <body>
 
-    <div id="todo">
+    <div id="app">
         <div class="to-do-container">
             <h1>TO DO LIST</h1>
+            <div class="new-todo">
+                <input type="text" v-model="newToDo.text" placeholder="Nuovo TODO" @keyup.enter="addItem">
+                <button @click="addItem">Aggiungi</button>
+            </div>
 
-            <input type="text" placeholder="Aggiungi">
-            <button>Aggiungi</button>
 
             <ul v-if="todos.length > 0">
                 <li v-for="(item, i) in todos" class="todo" :key="i"  :class="taskDone(i)">
